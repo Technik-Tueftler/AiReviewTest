@@ -1,10 +1,8 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-
-"""
-Problem gefunden mit dem teilen durch Null -> 
-"""
 def devided(dividend: int, divisor: int) -> int:
+    if divisor == 0:
+        raise ValueError("Divisor cannot be zero")
     value = dividend/divisor
     return value
 

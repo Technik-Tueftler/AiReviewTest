@@ -2,13 +2,7 @@ from datetime import datetime, timedelta
 
 def check_matched_day(current_date: datetime, target_day: int) -> bool:
     last_day_of_current_month = last_day_of_month(current_date)
-    if target_day > last_day_of_current_month.day:
-        if current_date.day == last_day_of_current_month.day:
-            return True
-    else:
-        if current_date.day == target_day:
-            return True
-    return False
+    return (target_day > last_day_of_current_month.day and current_date.day == last_day_of_current_month.day) or (target_day <= last_day_of_current_month.day and current_date.day == target_day)
 
 
 def last_day_of_month(date) -> datetime:
